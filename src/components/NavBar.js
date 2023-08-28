@@ -13,6 +13,7 @@ import {
   useDisclosure,
   HStack,
   Link,
+  Text,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { useState } from "react";
@@ -45,6 +46,10 @@ export default function Nav({ color }) {
     const aboutSection = document.querySelector("#about");
     aboutSection.scrollIntoView({ behavior: "smooth" });
   };
+  const scrollToSkills = () => {
+    const aboutSection = document.querySelector("#skills");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
   const scrollToExperience = () => {
     const experienceSection = document.querySelector("#experience");
     experienceSection.scrollIntoView({ behavior: "smooth" });
@@ -75,10 +80,11 @@ export default function Nav({ color }) {
   return (
     <>
       <Flex
-        bg={useColorModeValue("gray.100", "gray.900")}
+        bg={"#D0E3FF"}
         px={4}
         h={16}
-        boxShadow={scroll ? "base" : "none"}
+        // boxShadow={scroll ? "base" : "none"}
+        boxShadow={"none"}
         zIndex="sticky"
         position="fixed"
         as="header"
@@ -86,37 +92,51 @@ export default function Nav({ color }) {
         justifyContent={"space-between"}
         w="100%"
       >
-        <Link onClick={scrollToHero}>
+        {/* <Link onClick={scrollToHero}>
           <HStack>
             {TbLetterComponents.map((Component, index) => (
-              <Component key={index} color={colors[color]} />
+              <Component key={index} color={"#081F5C"} />
             ))}
           </HStack>
-        </Link>
+          <Text color={"#081F5C"}>{profile.logo}</Text>
+        </Link> */}
+
+        <Button variant="ghost" onClick={scrollToHero} color={"#081F5C"} _hover={{
+            borderColor: "transparent"
+          }}
+          _active={{
+            borderColor: "transparent"
+          }}
+          >
+          {profile.logo}
+        </Button>
 
         <Flex alignItems={"center"}>
           <Stack direction={"row"} spacing={7}>
             {isLargerThanMD ? (
               <>
-                <Button variant="ghost" onClick={scrollToAbout}>
+                <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
                   About
                 </Button>
-                <Button variant="ghost" onClick={scrollToExperience}>
-                  Experience
+                <Button variant="ghost" onClick={scrollToSkills} color={"#081F5C"}>
+                  Skills
                 </Button>
-                <Button variant="ghost" onClick={scrollToProjects}>
+                {/* <Button variant="ghost" onClick={scrollToExperience}>
+                  Experience
+                </Button> */}
+                <Button variant="ghost" onClick={scrollToProjects} color={"#081F5C"}>
                   Projects
                 </Button>
-                <Button variant="ghost" onClick={scrollToContact}>
+                <Button variant="ghost" onClick={scrollToContact} color={"#081F5C"}>
                   Contact
                 </Button>
               </>
             ) : (
               <></>
             )}
-            <Button onClick={toggleColorMode}>
+            {/* <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
+            </Button> */}
 
             {isLargerThanMD ? (
               <></>
@@ -131,16 +151,19 @@ export default function Nav({ color }) {
                   <DrawerOverlay />
                   <DrawerContent>
                     <DrawerBody>
-                      <Button variant="ghost" onClick={scrollToAbout}>
+                      <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
                         About
                       </Button>
-                      <Button variant="ghost" onClick={scrollToExperience}>
-                        Experience
+                      <Button variant="ghost" onClick={scrollToSkills} color={"#081F5C"}>
+                        Skills
                       </Button>
-                      <Button variant="ghost" onClick={scrollToProjects}>
+                      {/* <Button variant="ghost" onClick={scrollToExperience}>
+                        Experience
+                      </Button> */}
+                      <Button variant="ghost" onClick={scrollToProjects} color={"#081F5C"}>
                         Projects
                       </Button>
-                      <Button variant="ghost" onClick={scrollToContact}>
+                      <Button variant="ghost" onClick={scrollToContact} color={"#081F5C"}>
                         Contact
                       </Button>
                     </DrawerBody>

@@ -9,8 +9,8 @@ import {
 export default function Footer() {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
+      bg={"#D0E3FF"}
+      color={"#081F5C"}
     >
       <Container
         as={Stack}
@@ -18,7 +18,7 @@ export default function Footer() {
         py={4}
         align="center"
       >
-        <Text>© 2023 Eldora Boo. All rights reserved</Text>
+        <Text>© 2023 Azka Fitria. All rights reserved</Text>
       </Container>
     </Box>
   );

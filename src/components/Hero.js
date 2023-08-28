@@ -5,9 +5,11 @@ import {
   Text,
   Button,
   Stack,
+  HStack,
   Icon,
   useColorModeValue,
   createIcon,
+  Image
 } from "@chakra-ui/react";
 import ProfileArray from "./ProfileArray";
 

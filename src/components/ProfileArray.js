@@ -7,6 +7,7 @@ const parseProfile = (mdContent) => {
     headerRole: "",
     headerDesc: "",
     about: "",
+    skill: [],
     contact: "",
     linkedin: "",
     github: "",
@@ -31,9 +32,22 @@ const parseProfile = (mdContent) => {
         case "About":
           profile.about = lines[++i].trim();
           break;
+        case "Skill":
+          // profile.skill = lines[++i].trim();
+          while (lines[++i] && lines[i].startsWith("- ")) {
+            const imageLine = lines[i];
+            const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
+            profile.skill.push(image);
+            // const badgeLine = lines[i].substr(4).split("[");
+            // const badgeName = badgeLine[0].trim();
+            // const badgeColor = badgeLine[1].split("]")[0].trim();
+            // badges.push({ text: badgeName, colorScheme: badgeColor });
+          }
+    
+          break;
         case "Contact":
           profile.contact = lines[++i].trim();
-          const contactLinks = ["LinkedIn", "GitHub", "Email"];
+          const contactLinks = ["Name", "Address", "LinkedIn", "GitHub", "Email", "Phone"];
           for (const link of contactLinks) {
             const linkLine = lines[++i].substr(2).trim();
             if (linkLine.startsWith(link)) {
@@ -61,6 +75,7 @@ const ProfileArray = () => {
     headerRole: "",
     headerDesc: "",
     about: "",
+    skill: [],
     contact: "",
     linkedin: "",
     github: "",

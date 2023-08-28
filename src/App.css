@@ -1,3 +1,33 @@
+/* color palette
+taupe: #ECE7E2
+cream1: #C1A88A
+cream2: #C8AF8F
+green1: #6F7863
+green2: #535945
+green3: #2A3923 */
+
+/* #D0CDC9
+#918981
+#9FA4A3
+#717B7F
+#667579
+#4C5B6C
+#3A3A3A
+#080808 */
+
+
+/* #D0E3FF
+#EDF1F6
+#081F5C
+#7096D1 */
+/* #334EAC */
+/* #F7F2EB */
+/* #FFF9F0 */
+
+.app {
+  background-color: #D0E3FF;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +44,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ECE7E2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

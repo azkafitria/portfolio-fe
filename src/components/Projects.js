@@ -16,6 +16,7 @@ import {
   Link,
   Center,
 } from "@chakra-ui/react";
+import { FaLinkedin, FaGithub, FaEnvelope, FaGitlab } from "react-icons/fa";
 import { Fade } from "react-reveal";
 import { useState } from "react";
 import ProjectsArray from "./ProjectsArray";
@@ -35,23 +36,23 @@ export default function Projects({ color }) {
     
   return (
     <>
-      <Container maxW={"3xl"} id="projects">
+      <Container maxW={"4xl"} id="projects" bg={"#FFF9F0"}>
         <Stack
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
+          pb={{ base: 20, md: 16 }}
         >
           <Stack align="center" direction="row" p={4}>
             <HStack mx={4}>
-              <Text color={`${color}.400`} fontWeight={800}>
+              <Text color={"#334EAC"} fontWeight={800} fontSize={"2xl"}>
                 03
               </Text>
-              <Text fontWeight={800}>Projects</Text>
+              <Text fontWeight={800} color={"gray.600"}>PROJECTS</Text>
             </HStack>
-            <Divider orientation="horizontal" />
+            <Divider orientation="horizontal" bg={"gray.600"} />
           </Stack>
-          <Stack px={4} spacing={4}>
+          {/* <Stack px={4} spacing={4}>
             {projects.map((project) => (
               <Fade bottom>
                 <Card
@@ -93,21 +94,39 @@ export default function Projects({ color }) {
                 </Card>
               </Fade>
             ))}
-          </Stack>
-          <Text color={"gray.600"} fontSize={"xl"} px={4}>
+          </Stack> */}
+          {/* <Text color={"gray.600"} fontSize={"xl"} px={4}>
             Other Projects
-          </Text>
+          </Text> */}
           <Center px={4}>
             <ButtonGroup variant="outline">
               <Button
-                colorScheme={selected === "All" ? `${color}` : "gray"}
+                // colorScheme={selected === "All" ? `${color}` : "yellow"}
+                // colorScheme={color}
+                  bg={"#F7F2EB"}
+                  borderRadius={"none"}
+                  variant="outline"
+                  borderColor={selected === "All" ? "gray.400" : "#F7F2EB"}
+                  // px={6}
+                  _hover={{
+                    borderColor: "gray.400"
+                  }}
+                  color={"gray.600"} 
                 onClick={() => handleSelected("All")}
               >
                 All
               </Button>
               {options.map((option) => (
                 <Button
-                  colorScheme={selected === option.value ? `${color}` : "gray"}
+                  key={option.value}
+                  // colorScheme={selected === option.value ? `${color}` : "yellow"}
+                  bg={"#F7F2EB"}
+                  borderRadius={"none"}
+                  borderColor={selected === option.value ? "gray.400" : "#F7F2EB"}
+                  _hover={{
+                    borderColor: "gray.400"
+                  }}
+                  color={"gray.600"} 
                   onClick={() => handleSelected(option.value)}
                 >
                   {option.value}
@@ -126,12 +145,19 @@ export default function Projects({ color }) {
               })
               .map((other) => (
                 <Fade bottom>
-                  <Card key={other.name}>
+                  <Card key={other.name} bg={"#F7F2EB"} variant='outline' borderColor={"#F2F0DE"} borderRadius="none" 
+                  _hover={{
+                    borderColor: "gray.400"
+                  }}
+                  minHeight={"260px"}
+                  >
                     <Stack>
                       <CardBody align="left" h={[null, "40vh"]}>
-                        <Heading size="sm">{other.name}</Heading>
-
-                        <Text fontSize="sm" py={2}>
+                        {/* <Heading size="sm">{other.name}</Heading> */}
+                        <Text fontSize="lg" py={2} color={"gray.600"} fontWeight={600}>
+                          {other.name}
+                        </Text>
+                        <Text fontSize="sm" py={2} color={"gray.600"}>
                           {other.description}
                         </Text>
 
@@ -141,6 +167,7 @@ export default function Projects({ color }) {
                               key={button.text}
                               href={button.href}
                               color={`${color}.400`}
+                              isExternal
                             >
                               {button.text}
                             </Link>
