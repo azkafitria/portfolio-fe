@@ -1,1 +1,1 @@
-export const beURL = 'http://54.252.156.15:8000';
+export const beURL = 'https://azkafitria-portfolio-be.up.railway.app';
