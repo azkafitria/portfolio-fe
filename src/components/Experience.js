@@ -42,23 +42,23 @@ export default function Experience({ color }) {
 
   return (
     <>
-      <Container maxW={"3xl"} id="experience">
+      <Container maxW={"4xl"} id="experience" bg={"#FFF9F0"}>
         <Stack
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 36 }}
+          pb={{ base: 16, md: 16 }}
         >
           <Stack align="center" direction="row" px={4}>
-            <HStack mx={4}>
-              <Text color={`${color}.400`} fontWeight={800}>
+            <HStack mx={4} minW="100%">
+              <Text color={"#334EAC"} fontWeight={800} fontSize={"2xl"}>
                 02
               </Text>
-              <Text fontWeight={800}>Experience</Text>
+              <Text fontWeight={800} color={"gray.600"}>INTERNSHIP EXPERIENCE</Text>
             </HStack>
             <Divider orientation="horizontal" />
           </Stack>
-          <Center px={4}>
+          {/* <Center px={4}>
             <ButtonGroup variant="outline">
               {options.map((option) => (
                 <Button
@@ -69,23 +69,33 @@ export default function Experience({ color }) {
                 </Button>
               ))}
             </ButtonGroup>
-          </Center>
+          </Center> */}
           <Stack px={4} spacing={4}>
             {experience
               .filter((exp) => exp.tags.includes(selected))
               .map((exp) => (
                 <Fade bottom>
-                  <Card key={exp.company} size="sm">
+                  <Card key={exp.company} bg={"#F7F2EB"} variant='outline' borderColor={"#F2F0DE"} borderRadius="none" size="sm"
+                  style={{
+                    transition: "transform .15s",
+                  }}
+                  _hover={{
+                    borderColor: "gray.400",
+                    transform: "scale(1.005)"
+                  }}
+                  >
+                  {/* <Card key={exp.company} size="sm"> */}
                     <CardHeader>
                       <Flex justifyContent="space-between">
                         <HStack>
-                          <Image src={exp.image} h={50} />
+                          <Image src={exp.image} w={100}/>
                           <Box px={2} align="left">
-                            <Text fontWeight={600}>{exp.company}</Text>
-                            <Text>{exp.position}</Text>
+                            {/* <Text fontWeight={600}>{exp.company}</Text> */}
+                            <Text fontSize="lg" color={"gray.600"} fontWeight={600}>{exp.company}</Text>
+                            <Text fontSize="sm" color={"gray.600"}>{exp.position}</Text>
                           </Box>
                         </HStack>
-                        <Text px={2} fontWeight={300}>
+                        <Text px={2} fontWeight={300} fontSize="sm" color={"gray.600"}>
                           {exp.duration}
                         </Text>
                       </Flex>
@@ -94,11 +104,11 @@ export default function Experience({ color }) {
                       <Flex>
                         <List align="left" spacing={3}>
                           {exp.listItems.map((item, index) => (
-                            <ListItem key={index}>
+                            <ListItem key={index} fontSize="sm" color={"gray.600"} align="left">
                               <ListIcon
-                                boxSize={6}
+                                // boxSize={6}
                                 as={ChevronRightIcon}
-                                color={`${color}.500`}
+                                color={"#7096D1"}
                               />
                               {item}
                             </ListItem>
@@ -106,7 +116,7 @@ export default function Experience({ color }) {
                         </List>
                       </Flex>
                     </CardBody>
-                    <CardFooter>
+                    {/* <CardFooter>
                       <HStack spacing={2}>
                         {exp.badges.map((badge) => (
                           <Badge
@@ -117,7 +127,7 @@ export default function Experience({ color }) {
                           </Badge>
                         ))}
                       </HStack>
-                    </CardFooter>
+                    </CardFooter> */}
                   </Card>
                 </Fade>
               ))}

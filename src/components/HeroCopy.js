@@ -41,31 +41,21 @@ export default function Header({ color }) {
       <Container maxW={"4xl"} id="hero" bg={"#FFF9F0"}>
         <Stack
           className="animate"
-          pb={{ base: 24, md: 48 }}
-          pt={{ base: 24, md: 36 }}
+          pb={{ base: 36, md: 36 }}
+          pt={{ base: 48, md: 48 }}
           px={4}
         >
-          <Stack spacing='52px' direction={{ base: 'column-reverse', md: 'row' }}>
+          <Stack spacing='52px' direction={{ base: 'column-reverse', md: 'row' }} align="center">
             <Stack
               as={Box}
-              textAlign={"right"}
-              spacing={{ base: 8, md: 8 }}
+              textAlign={{ base: "center", md: "right"}}
+              spacing={{ base: 8, md: 6 }}
             >
               <Heading
                 fontWeight={600}
                 fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
                 lineHeight={"110%"}
               >
-                {/* <div className ="waviy">
-                  <span color={"#7096D1"}>L</span>
-                  <span color={"#7096D1"}>o</span>
-                  <span color={"#7096D1"}>a</span>
-                  <span color={"#7096D1"}>d</span>
-                  <span color={"#7096D1"}>i</span>
-                  <span color={"#7096D1"}>n</span>
-                  <span color={"#7096D1"}>g</span>
-                  <span color={"#7096D1"}>.</span>
-                </div> */}
                 <Text className="hello" fontSize='3xl' color={"#334EAC"}>
                     <span className="title-word title-word-1">H</span>
                     <span className="title-word title-word-2">E</span>
@@ -87,11 +77,17 @@ export default function Header({ color }) {
               >
                 {profile.headerDesc}
               </Text>
+              <Text
+                color={"gray.600"}
+                fontSize={{ base: "sm", sm: "md", md: "md" }}
+              >
+                {profile.headerMoreDesc}
+              </Text>
               <Stack
                 direction={"column"}
                 spacing={3}
                 align={"center"}
-                alignSelf={"end"}
+                alignSelf={{ base: "center", md: "end"}}
                 position={"relative"}
               >
                 <Button
@@ -100,8 +96,12 @@ export default function Header({ color }) {
                   bg={"#7096D1"}
                   borderRadius={"none"}
                   px={6}
+                  style={{
+                    transition: "transform .15s",
+                  }}
                   _hover={{
                     bg: "#7096D1",
+                    transform: "scale(1.02)"
                   }}
                   onClick={linkedin}
                 >
@@ -109,8 +109,8 @@ export default function Header({ color }) {
                 </Button>
               </Stack>
             </Stack>
-            <Flex minWidth='30%' justify={{ base: 'end', md: 'start' }} gap='2'>
-              <Image objectFit='cover' src='/assets/profile-pics.jpeg' alt='Azka Fitria' />
+            <Flex w='60%' justify={{ base: 'center', md: 'start' }} gap='2'>
+              <Image w={{ base: '50%', md: '100%' }} objectFit='cover' src='/assets/profile-pics.jpeg' alt='Azka Fitria' />
             </Flex>
           </Stack>
         </Stack>

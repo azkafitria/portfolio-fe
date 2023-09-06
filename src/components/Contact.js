@@ -67,8 +67,8 @@ export default function Contact({ color }) {
             as={Box}
             textAlign={"center"}
             spacing={{ base: 8, md: 14 }}
-            pb={{ base: 20, md: 16 }}
-            pt={{ base: 20, md: 16 }}
+            pb={{ base: 16, md: 16 }}
+            pt={{ base: 8, md: 16 }}
           >
             {/* <Stack align="center" direction="row" p={4}>
               <HStack mx={4}>
@@ -119,7 +119,7 @@ export default function Contact({ color }) {
               </Center>
             </Stack>
           </Stack>
-          <Center height='300px'>
+          <Center height={{ base: "0px", md: "300px"}}>
             <Divider orientation='vertical' bg={"#334EAC"} />
           </Center>
           <Container maxW={"md"}>
@@ -127,16 +127,16 @@ export default function Contact({ color }) {
             as={Box}
             textAlign={{ base: "center", md: "left"}}
             // spacing={{ base: 8, md: 14 }}
-            pb={{ base: 20, md: 16 }}
-            pt={{ base: 20, md: 16 }}
-            pl={5}
+            pb={{ base: 8, md: 16 }}
+            pt={{ base: 16, md: 16 }}
+            pl={{ base: 0, md: 5 }}
             // bg={"#EDF1F6"}
           >
             <Text color={"#334EAC"} fontWeight={600} fontSize={"xl"} px={4}>
               Let's connect!
             </Text>
             <form onSubmit={handleSendMessage}>
-            <Stack spacing={3} maxW={"500px"} align="end">
+            <Stack spacing={3} maxW={"500px"} align={{ base: "center", md: "end"}}>
               <Input value={nameMessage} onChange={event => setNameMessage(event.currentTarget.value)}
                 placeholder='Name' _placeholder={{ opacity: 1, color: 'gray.400' }} color={"gray.600"} bg={"#FFF9F0"} size="sm" variant='outline' focusBorderColor={"#F2F0DE"} borderRadius="none"/>
               <Input value={emailMessage} onChange={event => setEmailMessage(event.currentTarget.value)}
@@ -151,8 +151,12 @@ export default function Contact({ color }) {
                 bg={"#F7F2EB"}
                 borderRadius={"none"}
                 borderColor={"#F7F2EB"}
+                style={{
+                  transition: "transform .15s",
+                }}
                 _hover={{
-                  borderColor: "gray.400"
+                  borderColor: "gray.400",
+                  transform: "scale(1.02)"
                 }}
                 color={"gray.600"} 
                 variant='outline'

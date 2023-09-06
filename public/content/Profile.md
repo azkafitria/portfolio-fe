@@ -4,10 +4,11 @@
 ## Header
 - HELLO! 
 - My name is Azka Fitria
-- I am a fresh graduate from University of Indonesia, majoring computer science. I am looking for opportunity/interested in Software Engineering espescially in web. I love to lalala!
+- I am a computer science fresh graduate from University of Indonesia, and highly interested in software engineering specifically in web development. 
+- I love exploring new and interesting things everywhere.
 
 ## About
-I am a final year computer science student. tinggal di indonesia. interested sama software engineering, nature, and cats.
+fresh grad comp science student dari UI. tinggal di Bogor, indonesia. interested sama software engineering, especially di web. also love nature and cats.
 
 ## Skill
 - ![50x50](/assets/python-logo.png)

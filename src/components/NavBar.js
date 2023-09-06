@@ -115,15 +115,15 @@ export default function Nav({ color }) {
           <Stack direction={"row"} spacing={7}>
             {isLargerThanMD ? (
               <>
-                <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
+                {/* <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
                   About
-                </Button>
+                </Button> */}
                 <Button variant="ghost" onClick={scrollToSkills} color={"#081F5C"}>
                   Skills
                 </Button>
-                {/* <Button variant="ghost" onClick={scrollToExperience}>
+                <Button variant="ghost" onClick={scrollToExperience} color={"#081F5C"}>
                   Experience
-                </Button> */}
+                </Button>
                 <Button variant="ghost" onClick={scrollToProjects} color={"#081F5C"}>
                   Projects
                 </Button>
@@ -148,18 +148,18 @@ export default function Nav({ color }) {
                   onClick={onOpen}
                 ></Button>
                 <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
-                  <DrawerOverlay />
-                  <DrawerContent>
-                    <DrawerBody>
-                      <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
+                  {/* <DrawerOverlay /> */}
+                  <DrawerContent bg={"#D0E3FF"} minH={16}>
+                    <DrawerBody textAlign={"center"}>
+                      {/* <Button variant="ghost" onClick={scrollToAbout} color={"#081F5C"}>
                         About
-                      </Button>
+                      </Button> */}
                       <Button variant="ghost" onClick={scrollToSkills} color={"#081F5C"}>
                         Skills
                       </Button>
-                      {/* <Button variant="ghost" onClick={scrollToExperience}>
+                      <Button variant="ghost" onClick={scrollToExperience} color={"#081F5C"}>
                         Experience
-                      </Button> */}
+                      </Button>
                       <Button variant="ghost" onClick={scrollToProjects} color={"#081F5C"}>
                         Projects
                       </Button>

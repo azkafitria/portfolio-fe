@@ -27,6 +27,7 @@ export default function Projects({ color }) {
     const projects = ProjectsArray();
     const others = OtherProjectsArray();
     const options = TagsArray("ProjectsTags");
+    console.log(others)
     
     const [selected, setSelected] = useState("All");
 
@@ -41,7 +42,7 @@ export default function Projects({ color }) {
           as={Box}
           textAlign={"center"}
           spacing={{ base: 8, md: 14 }}
-          pb={{ base: 20, md: 16 }}
+          pb={{ base: 16, md: 16 }}
         >
           <Stack align="center" direction="row" p={4}>
             <HStack mx={4}>
@@ -108,8 +109,12 @@ export default function Projects({ color }) {
                   variant="outline"
                   borderColor={selected === "All" ? "gray.400" : "#F7F2EB"}
                   // px={6}
+                  style={{
+                    transition: "transform .15s",
+                  }}
                   _hover={{
-                    borderColor: "gray.400"
+                    borderColor: "gray.400",
+                    transform: "scale(1.02)"
                   }}
                   color={"gray.600"} 
                 onClick={() => handleSelected("All")}
@@ -123,8 +128,12 @@ export default function Projects({ color }) {
                   bg={"#F7F2EB"}
                   borderRadius={"none"}
                   borderColor={selected === option.value ? "gray.400" : "#F7F2EB"}
+                  style={{
+                    transition: "transform .15s",
+                  }}
                   _hover={{
-                    borderColor: "gray.400"
+                    borderColor: "gray.400",
+                    transform: "scale(1.02)"
                   }}
                   color={"gray.600"} 
                   onClick={() => handleSelected(option.value)}
@@ -146,11 +155,20 @@ export default function Projects({ color }) {
               .map((other) => (
                 <Fade bottom>
                   <Card key={other.name} bg={"#F7F2EB"} variant='outline' borderColor={"#F2F0DE"} borderRadius="none" 
+                  style={{
+                    transition: "transform .15s",
+                  }}
                   _hover={{
-                    borderColor: "gray.400"
+                    borderColor: "gray.400",
+                    transform: "scale(1.02)"
                   }}
                   minHeight={"260px"}
                   >
+                    {/* <Image objectFit="cover" src={other.image} h='100px' 
+                      sytle={{
+                        background: "rgba(0, 0, 0, 0.5)",
+                      }}
+                    /> */}
                     <Stack>
                       <CardBody align="left" h={[null, "40vh"]}>
                         {/* <Heading size="sm">{other.name}</Heading> */}
@@ -166,7 +184,8 @@ export default function Projects({ color }) {
                             <Link
                               key={button.text}
                               href={button.href}
-                              color={`${color}.400`}
+                              color={`#334EAC`}
+                              fontSize="sm"
                               isExternal
                             >
                               {button.text}
@@ -176,7 +195,7 @@ export default function Projects({ color }) {
                         <HStack flexWrap="wrap" pt={4} spacing={2}>
                           {other.badges.map((badge) => (
                             <Badge
-                              my={2}
+                              mb={2}
                               key={badge.text}
                               colorScheme={badge.colorScheme}
                             >

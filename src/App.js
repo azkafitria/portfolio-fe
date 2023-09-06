@@ -22,9 +22,9 @@ function App() {
     <div className='app'>
       <Nav color={color} />
       <Header color={color} />
-      <About color={color} />
+      {/* <About color={color} /> */}
       <Skill color={color} />
-      {/* <Experience color={color} /> */}
+      <Experience color={color} />
       <Projects color={color} />
       {/* <Resume color={color} /> */}
       <Contact color={color} />

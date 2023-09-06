@@ -9,6 +9,8 @@ const parseOtherProjects = (mdContent) => {
 
     if (line.startsWith("## ")) {
       const name = line.substr(3).trim();
+      const imageLine = lines[++i];
+      const image = imageLine.match(/!\[(.*)\]\((.*)\)/)[2];
       const description = lines[++i].trim();
       const tags = lines[++i].split(":")[1].trim().split(",");
       const badges = [];
@@ -31,6 +33,7 @@ const parseOtherProjects = (mdContent) => {
 
       others.push({
         name,
+        image,
         description,
         tags: tags,
         badges,
